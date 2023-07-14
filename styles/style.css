@@ -42,12 +42,162 @@ div.container {
         justify-content: center;
         align-items: center;
         width: 100%;
-        height: 10%;
+        height: 35%;
         background-color: white;
     }
 
+        div.container > div.user-container > div.left-side {
+            height: 100%;
+            width: 30%;
+            background-color: white;
+            box-sizing: border-box;
+            padding: 20px 70px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+            div.container > div.user-container > div.left-side > p.title {
+                text-align: center;
+                font-weight: bold;
+                font-size: 1.2rem;
+                
+                border-color: black;
+                border-style: solid;
+                border-width: 1px;
+                border-radius: 10px;
+
+                margin-bottom: 10px;            
+                padding: 7px;
+                box-sizing: border-box;
+            }
+
+                div.container > div.user-container > div.left-side > button {
+                    display: block;
+                    width: 100%;
+                    margin-bottom: 10px;
+                    box-sizing: border-box;
+                    padding: 10px;
+                    border: none;
+                    border-radius: 10px;
+                    background-color: #009690; /* 主要顏色 */
+                    color: #fff;
+                    text-align: center;
+                    text-decoration: none;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+                    font-size: 1rem;
+                }
+
+                div.container > div.user-container > div.left-side > button.active {
+                    background-color: #cc0033; /* 點擊後的顏色 */
+                }
+              
+                div.container > div.user-container > div.left-side > button:hover:not(.active):hover {
+                    background-color: #007e78; /* 滑鼠懸停時的顏色 */
+                }
+              
+                div.container > div.user-container > div.left-side > button:active {
+                    background-color: #005e5a; /* 點擊時的顏色 */
+                }
+              
+                div.container > div.user-container > div.left-side > button:focus {
+                    outline: none; /* 移除按鈕的默認外框 */
+                }
+  
+        div.container > div.user-container > div.middle-side {
+            height: 100%;
+            width: 50%;
+            background-color: white;
+            box-sizing: border-box;
+            padding: 20px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+            div.container > div.user-container > div.middle-side > p.title {
+                text-align: center;
+                font-weight: bold;
+                font-size: 1.2rem;
+                
+                border-color: black;
+                border-style: solid;
+                border-width: 1px;
+                border-radius: 10px;
+
+                margin-bottom: 10px;            
+                padding: 7px;
+                box-sizing: border-box;
+            }
+
+            div.container > div.user-container > div.middle-side div.input-field {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                width: 100%;
+            }
+
+            div.container > div.user-container > div.middle-side label {
+                display: block;
+                font-weight: bold;
+                margin-bottom: 5px;
+                font-size: 1.1rem;
+                width: 60%;
+            }
+          
+            div.container > div.user-container > div.middle-side input {
+                width: 40%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                background-color: #f9f9f9;
+                transition: border-color 0.3s ease;
+            }
+          
+            div.container > div.user-container > div.middle-side input:focus {
+                outline: none;
+                border-color: #009690;
+            }
+
+        div.container > div.user-container > div.right-side {
+            height: 100%;
+            width: 20%;
+            background-color: white;
+            box-sizing: border-box;
+            padding: 20px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+            div.container > div.user-container > div.right-side > button {
+                width: 50%;
+                height: 50%;
+                box-sizing: border-box;
+                padding: 10px;
+                border: none;
+                border-radius: 10px;
+                background-color: #78b7ff; /* 主要顏色 */
+                color: #fff;
+                text-align: center;
+                text-decoration: none;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                font-size: 1rem;
+            }
+
+            div.container > div.user-container > div.right-side > button:hover {
+                background-color: #cc0033; /* 滑鼠懸停時的顏色 */
+            }
+          
+
     main {
-        height: 80%;
+        height: 65%;
         display: flex;
         flex-direction: row;
     }
