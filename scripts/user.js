@@ -57,7 +57,8 @@ async function sendData() {
     await sleep(5000);
     loader.style.display = 'none';
     submitBtn.style.display = 'block';
-
+    var response = "";
+    initMap(parseResponse(response));
 }
 
 
@@ -96,4 +97,50 @@ function collectFormData() {
             'trans2': inputEmts[4].value,
         }
     }
+}
+
+function parseResponse(response) {
+    const properties = [
+        {
+          address: "2117 Su St, MountainView, CA",
+          description: "Single family house near golf club",
+          price: "$ 1,700,000",
+          type: "home",
+          bed: 4,
+          bath: 3,
+          size: 200,
+          position: {
+            lat: 24.9940147636594,
+            lng: 121.433901728607,
+          },
+        },
+        {
+          address: "197 Alicia Dr, Santa Clara, CA",
+          description: "Multifloor large warehouse",
+          price: "$ 5,000,000",
+          type: "warehouse",
+          bed: 5,
+          bath: 4,
+          size: 700,
+          position: {
+            lat: 22.9940147636594,
+            lng: 120.433901728607,
+          },
+        },
+        {
+          address: "700 Jose Ave, Sunnyvale, CA",
+          description: "3 storey townhouse with 2 car garage",
+          price: "$ 3,850,000",
+          type: "building",
+          bed: 4,
+          bath: 4,
+          size: 600,
+          position: {
+            lat: 23.9940147636594,
+            lng: 120.433901728607,
+          },
+        },
+      ];
+    
+      return properties;
 }
