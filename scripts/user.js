@@ -58,7 +58,13 @@ async function sendData() {
     loader.style.display = 'none';
     submitBtn.style.display = 'block';
     var response = "";
-    initMap(parseResponse(response));
+    var result = parseResponse(response);
+    
+    // add marker to map
+    initMap(result['map']);
+
+    // disply result as a form
+    initTable(result['table']);
 }
 
 
@@ -140,7 +146,48 @@ function parseResponse(response) {
             lng: 120.433901728607,
           },
         },
-      ];
+    ];
+
+    const samples = [
+        ['特徵1', '特徵1', '特徵1', '特徵1', '特徵1', '特徵1', '特徵1', '特徵1', '特徵1', '特徵1', '價格'],
+        ['樣本1', '樣本1', '樣本1', '樣本1', '樣本1', '樣本1', '樣本1', '樣本1', '樣本1', '樣本1', '樣本1'],
+        ['樣本2', '樣本2', '樣本2', '樣本2', '樣本2', '樣本2', '樣本2', '樣本2', '樣本2', '樣本2', '樣本2'],
+        ['樣本3', '樣本3', '樣本3', '樣本3', '樣本3', '樣本3', '樣本3', '樣本3', '樣本3', '樣本3', '樣本3'],
+        ['樣本4', '樣本4', '樣本4', '樣本4', '樣本4', '樣本4', '樣本4', '樣本4', '樣本4', '樣本4', '樣本4'],
+        ['樣本5', '樣本5', '樣本5', '樣本5', '樣本5', '樣本5', '樣本5', '樣本5', '樣本5', '樣本5', '樣本5'],
+    ]
+
+      var res = {
+        'map': properties,
+        'table': samples
+      }
+
+      return res;
+}
+
+function initTable(data) {
+    var tbl = document.querySelector("#eval-table");
+    var trs = tbl.getElementsByTagName('tr');
     
-      return properties;
+    for(var i=0; i<6; i++) {
+        var tr = trs[i];
+
+        // clear all child emts
+        while (tr.firstChild) {
+            tr.removeChild(tr.lastChild);
+        }
+
+        for(var j=0; j<11; j++) {
+            if(i == 0) {
+                var emt = document.createElement('th');
+            } else {
+                var emt = document.createElement('td');
+            }
+            emt.innerHTML = data[i][j];
+            tr.appendChild(emt);
+        }
+    }
+
+    var desc = document.querySelector('div.eval-desc');
+    desc.innerHTML = 'Based on 5 neighboring samples, predicted price is $500000.';
 }
